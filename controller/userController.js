@@ -19,7 +19,7 @@ const newUserAdd=async(req,res)=>{
         validaSchema=validaSchema.value
     }
     try{
-        const userResponse = await serviceUser.findOne({email:validaSchema.email})
+        const userResponse = await serviceUser.findOne({email:validaSchema.email},'username')
         if(userResponse){
             return res.status(200).json({
                 message:"user already exist !", 

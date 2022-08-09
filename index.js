@@ -9,6 +9,10 @@ app.use(cors());
 app.use(express.json());
 app.use("/",require("./routes/index"))
 
+app.get((req,res)=>{
+  res.send("server running" ,PORT);
+})
+
 // const express = require('express');
 // const app = express();
 // // require('dotenv').config()
