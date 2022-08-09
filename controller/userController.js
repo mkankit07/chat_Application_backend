@@ -36,7 +36,7 @@ const newUserAdd=async(req,res)=>{
         }
     }catch(err){
         return res.status(200).json({
-            message:"Internal server error !", 
+            message:err.message||"Internal server error!", 
             status:500
         })
     }
@@ -83,7 +83,7 @@ const loginAuth=async(req, res)=>{
     }catch(error){
         console.log(error);
         return res.status(200).json({
-            message:"Internal server error !", 
+            message:err.message||"Internal server error!", 
             status:500
         })
     }
